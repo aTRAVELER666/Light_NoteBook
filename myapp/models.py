@@ -4,10 +4,7 @@ from datetime import datetime
 from sqlalchemy.orm import Mapped,mapped_column,DeclarativeBase
 from werkzeug.security import generate_password_hash, check_password_hash
 
-class Base(DeclarativeBase):
-  pass
-
-db = SQLAlchemy(model_class=Base)
+from myapp.extensions import db
 
 class User(db.Model):
     __tablename__ = 'user'

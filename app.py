@@ -1,12 +1,11 @@
-from flask import Flask, render_template
-from markupsafe import escape
-import unittest
 import os
-import sys
-import datetime
-app = Flask(__name__)
-@app.route('/')
-@app.route('/index')
-@app.route('/home')
-def index():
-    return render_template("basic_page.html")
+
+from dotenv import load_dotenv
+
+dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+if os.path.exists(dotenv_path):
+    load_dotenv(dotenv_path)
+
+from myapp import create_app
+
+app = create_app(config_name='development')

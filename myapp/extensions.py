@@ -14,4 +14,4 @@ def load_user(user_id):
     user = db.session.get(User, int(user_id) )
     return user
 
-login_manager.login_view="login"
+login_manager.login_view="main.login"

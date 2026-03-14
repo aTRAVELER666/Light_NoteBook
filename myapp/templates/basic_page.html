@@ -10,8 +10,22 @@
         {% endblock %}
     </head>
     <body>
+        {% for message in get_flashed_messages() %}
+            <div class="alert"> {{message}} </div>
+        {% endfor %}
         <h2>Light NoteBook</h2>
         <img alt="Flower Sea" src="{{ url_for('static', filename='images/flowersea.png') }}" >
+        <nav>
+            <ul>
+            <li><a href="{{ url_for('main.index') }}">Home</a></li>
+            {% if current_user.is_authenticated %}
+            <li><a href="{{ url_for('main.settings') }}">Settings</a></li>
+            <li><a href="{{ url_for('main.logout') }}" onclick="return confirm('Are you sure?')">Logout</a></li>
+            {% else %}
+            <li><a href="{{ url_for('main.login') }}">Login</a></li>
+            {% endif %}
+            </ul>
+        </nav>
         {% block body %}
         {% endblock %}
     </body>

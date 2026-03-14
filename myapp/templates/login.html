@@ -1,0 +1,15 @@
+{% extends 'basic_page.html' %}
+{% block body %}
+<h3>Login</h3>
+<form method="POST">
+    Username<br>
+    <input type="text" name="username"><br><br>
+    Uid<br>
+    <input type="text" name="uid"><br><br>
+    Password<br>
+    <input type="password" name="password" required><br><br>
+    <input class="btn" type="submit" name="submit" value="Submit">
+</form>
+<br>
+Don't have an account? <a href="{{ url_for('main.register') }}">Register one</a>
+{% endblock %}

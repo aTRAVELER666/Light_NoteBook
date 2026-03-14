@@ -1,0 +1,15 @@
+{% extends 'basic_page.html' %}
+{% block body %}
+<h3>Register</h3>
+<form method="POST">
+    Username<br>
+    <input type="text" name="username" required><br><br>
+    Nickname<br>
+    <input type="text" name="nickname"><br><br>
+    Password<br>
+    <input type="password" name="password" required><br><br>
+    Repeat<br>
+    <input type="password" name="repeat" required><br><br>
+    <input class="btn" type="submit" name="submit" value="Submit">
+</form>
+{% endblock %}
